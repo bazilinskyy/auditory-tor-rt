@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Reaction times of auditory take over requests</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jspsych-5.0.3/jspsych.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-single-audio.js"></script>
+    <link href="jspsych-5.0.3/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body>
+  </body>
+    <p>Enter the code you were given:</p>
+    <input type="text" id="code"></input>
+    <button onclick="sendData();">Submit HIT</button>
+
+    <script>
+    function sendData() {
+      jsPsych.turk.submitToTurk({
+        code: document.getElementById('code').value
+      });
+    }
+    </script>
+</html>

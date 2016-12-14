@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>My experiment</title>
+    <title>Reaction times of auditory take over requests</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="jspsych-5.0.3/jspsych.js"></script>
     <script src="jspsych-5.0.3/plugins/jspsych-text.js"></script>
@@ -34,14 +34,13 @@
     {
       stimulus: '/sounds/beeps.mp3',
       prompt: 'beeps',
-      timing_post_trial: post_trial_gap,
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beeps"});
       }
     },
     {
       stimulus: '/sounds/male.mp3',
-      prompt: 'male',
+      prompt: 'beeps',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "male"});
       }
@@ -62,22 +61,16 @@
     choices: ['F'],
     //timing_response: 5000,
     timing_post_trial: post_trial_gap,
-    // on_finish: function(data){
-    //   var correct = false;
-    //   if(data.response == 'go' && data.rt > -1){
-    //     correct = true;
-    //   } else if(data.response == 'no-go' && data.rt == -1){
-    //     correct = true;
-    //   }
-    //   jsPsych.data.addDataToLastTrial({correct: correct});
-    // },
     timeline: all_trials
   };
+ 
 
   var debrief_block = {
     type: "text",
     text: function() {
-      return "<p>Thank you! Press any key to complete the experiment.</p>";
+      return "<p>Thank you! Please remember the following number: " +
+      String(Date.now()) +
+      ". Press any key to complete the experiment and proceed to the page to finalise the HIT and receive money.</p>";
     }
   };
 
@@ -100,14 +93,19 @@
 
   /* MTurk information */
   var turkInfo = jsPsych.turk.turkInfo();
-  worker_id = "12345678";
+  if(turkInfo.previewMode && !turkInfo.outsideTurk) {
+    worker_id = turkInfo.workerId;
+  } else {
+    worker_id = String(Date.now());
+  }
+  timestamp = String(Date.now());
 
   /* Start the experiment */
   jsPsych.init({
     timeline: timeline,
     on_finish: function(data) {
       //jsPsych.data.displayData();
-      saveData(worker_id.concat("_filename.csv"), jsPsych.data.dataAsCSV())
+      saveData(worker_id.concat("_").concat(timestamp).concat(".csv"), jsPsych.data.dataAsCSV())
     }
   });
 
