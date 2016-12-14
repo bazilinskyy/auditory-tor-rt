@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My experiment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jspsych-5.0.3/jspsych.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-single-audio.js"></script>
+    <link href="jspsych-5.0.3/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body>
+  </body>
+  <script>
+
+  /* define welcome message block */
+  var welcome_block = {
+    type: "text",
+    text: "Welcome to the experiment. Press any key to begin."
+  };
+
+  /* define instructions block */
+  var instructions_block = {
+    type: "text",
+    text: "<p>In this experiment, you will hear sounds. You need to press 'F' after hearing each sound as fast as possible. Your reaction times will be recorded. </p>",
+    timing_post_trial: 2000
+  };
+
+  var post_trial_gap = function() {
+    return Math.floor( Math.random() * 1500 ) + 750;
+  }
+
+  /* define test block */
+  var test_stimuli = [
+    {
+      stimulus: '/sounds/beeps.mp3',
+      prompt: 'beeps',
+      timing_post_trial: post_trial_gap,
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beeps"});
+      }
+    },
+    {
+      stimulus: '/sounds/male.mp3',
+      prompt: 'male',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "male"});
+      }
+    },
+    {
+      stimulus: '/sounds/female.mp3',
+      prompt: 'female',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "female"});
+      }
+    }
+  ];
+
+  var all_trials = jsPsych.randomization.repeat(test_stimuli, 2);
+
+  var audio_block = {
+    type: 'single-audio',
+    choices: ['F'],
+    //timing_response: 5000,
+    timing_post_trial: post_trial_gap,
+    // on_finish: function(data){
+    //   var correct = false;
+    //   if(data.response == 'go' && data.rt > -1){
+    //     correct = true;
+    //   } else if(data.response == 'no-go' && data.rt == -1){
+    //     correct = true;
+    //   }
+    //   jsPsych.data.addDataToLastTrial({correct: correct});
+    // },
+    timeline: all_trials
+  };
+
+  var debrief_block = {
+    type: "text",
+    text: function() {
+      return "<p>Thank you! Press any key to complete the experiment.</p>";
+    }
+  };
+
+  /* create experiment timeline array */
+  var timeline = [];
+  timeline.push(welcome_block);
+  timeline.push(instructions_block);
+  timeline.push(audio_block);
+  timeline.push(debrief_block);
+
+  /* save data */
+  function saveData(filename, filedata){
+   $.ajax({
+      type:'post',
+      cache: false,
+      url: 'save-data.php', // this is the path to the above PHP script
+      data: {filename: filename, filedata: filedata}
+   });
+  }
+
+  /* MTurk information */
+  var turkInfo = jsPsych.turk.turkInfo();
+  worker_id = "12345678";
+
+  /* Start the experiment */
+  jsPsych.init({
+    timeline: timeline,
+    on_finish: function(data) {
+      //jsPsych.data.displayData();
+      saveData(worker_id.concat("_filename.csv"), jsPsych.data.dataAsCSV())
+    }
+  });
+
+</script>
+</html>
