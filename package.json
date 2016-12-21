@@ -1,0 +1,25 @@
+{
+  "name": "auditory-tor-rt",
+  "version": "1.0.0",
+  "description": "Experiment on reaction times for auditory and auditory/visual stimuli.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bazilinskyy/auditory-tor-rt.git"
+  },
+  "author": "Pavlo Bazilinskyy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bazilinskyy/auditory-tor-rt/issues"
+  },
+  "homepage": "https://github.com/bazilinskyy/auditory-tor-rt",
+  "dependencies": {
+    "body-parser": "^1.12.0",
+    "ejs": "^2.3.1",
+    "express": "^4.12.0",
+    "mongoose": "^3.8.24"
+  }
+}

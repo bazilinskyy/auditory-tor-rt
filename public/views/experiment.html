@@ -1,0 +1,481 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Reaction times of auditory take over requests</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jsPsych/jspsych.js"></script>
+    <script src="jsPsych/plugins/jspsych-text.js"></script>
+    <script src="jsPsych/plugins/jspsych-single-audio.js"></script>
+    <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+    <link href="css/experiment.css" rel="stylesheet" type="text/css"></link>
+
+
+  </head>
+  <body>
+    <div class = "parent">
+      <div class = "child">
+        <div id="jspsych_target"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+
+  // /* define welcome message block */
+  // var welcome_block = {
+  //   type: "text",
+  //   text: "Welcome to the experiment. Press any key to begin."
+  // };
+
+  // /* define instructions block */
+  // var instructions_block = {
+  //   type: "text",
+  //   text: "<p>In this experiment, you will hear sounds. You need to press 'F' after hearing each sound as fast as possible. Your reaction times will be recorded. </p>",
+  //   timing_post_trial: 2000
+  // };
+
+  /* define welcome message block */
+  var welcome_block = {
+    type: "text",
+    text: "Welcome to the experiment. Press any key to begin."
+  };
+
+  /* define instructions block */
+  var instructions_block = {
+    type: "text",
+    text: "<p>In this experiment, you will hear sounds. You need to press 'F' after hearing each sound as fast as possible. Your reaction times will be recorded. </p>",
+    timing_post_trial: 2000
+  };
+
+  var post_trial_gap = function() {
+    return Math.floor( Math.random() * 1500 ) + 750;
+  }
+
+  /* define test block */
+  var test_stimuli = [
+    /* red */
+    {
+      stimulus: 'sounds/beep_0ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_0_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_10ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_10_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_20ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_20_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_30ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_30_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_40ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_40_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_50ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_50_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_60ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_60_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_70ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_70_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_80ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_80_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_90ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_90_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_100ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_100_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_200ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_200_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_300ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_300_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_500ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_500_red"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_1000ms.mp3',
+      prompt: '<img src="img/circle_red.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_1000_red"});
+      }
+    },
+    /* middle red */
+    {
+      stimulus: 'sounds/beep_0ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_0_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_10ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_10_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_20ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_20_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_30ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_30_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_40ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_40_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_50ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_50_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_60ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_60_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_70ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_70_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_80ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_80_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_90ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_90_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_100ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_100_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_200ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_200_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_300ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_300_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_500ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_500_middle"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_1000ms.mp3',
+      prompt: '<img src="img/circle_middle.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_1000_middle"});
+      }
+    },
+    /* low red */
+    {
+      stimulus: 'sounds/beep_0ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_0_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_10ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_10_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_20ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_20_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_30ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_30_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_40ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_40_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_50ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_50_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_60ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_60_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_70ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_70_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_80ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_80_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_90ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_90_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_100ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_100_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_200ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_200_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_300ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_300_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_500ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_500_low"});
+      }
+    },
+    {
+      stimulus: 'sounds/beep_1000ms.mp3',
+      prompt: '<img src="img/circle_low.png" />',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_1000_low"});
+      }
+    },
+    /* no visual */
+    {
+      stimulus: 'sounds/beep_0ms.mp3',
+      on_finish: function(data){
+        jsPsych.data.addDataToLastTrial({type: "beep_0_no"});
+      }
+    }
+  ];
+
+  var all_trials = jsPsych.randomization.repeat(test_stimuli, 3);
+
+  var audio_block = {
+    type: 'single-audio',
+    choices: ['F'],
+    //timing_response: 5000,
+    timing_post_trial: post_trial_gap,
+    timeline: all_trials
+  };
+ 
+
+  var debrief_block = {
+    type: "text",
+    text: function() {
+      return "<p>Thank you! Please remember the following number: " +
+      String(Date.now()) +
+      ". Press any key to complete the experiment and proceed to the page to finalise the HIT and receive money.</p>";
+    }
+  };
+
+  /* create experiment timeline array */
+  var timeline = [];
+  timeline.push(welcome_block);
+  timeline.push(instructions_block);
+  timeline.push(audio_block);
+  timeline.push(debrief_block);
+
+  /* save data to file */
+  function saveData(filename, filedata){
+   $.ajax({
+      type:'post',
+      cache: false,
+      url: 'save-data.php', // this is the path to the above PHP script
+      data: {filename: filename, filedata: filedata}
+   });
+  }
+
+  // data parameter should be either the value of jsPsych.data()
+  // or the parameter that is passed to the on_data_update callback function for the core library
+  // jsPsych.data() contains ALL data
+  // the callback function will contain only the most recently written data.
+  function saveDataDB(data){
+     var data_table = "auditory_tor_rt_e1"; // change this for different experiments
+     $.ajax({
+        type:'post',
+        cache: false,
+        url: 'save-data-db.php', // change this to point to your php file.
+        // opt_data is to add additional values to every row, like a subject ID
+        // replace 'key' with the column name, and 'value' with the value.
+        data: {
+            table: data_table,
+            json: JSON.stringify(data),
+            // opt_data: {key: value}
+        },
+        success: function(output) { console.log(output); } // write the result to javascript console
+     });
+  }
+
+  /* MTurk information */
+  var turkInfo = jsPsych.turk.turkInfo();
+  if(turkInfo.previewMode && !turkInfo.outsideTurk) {
+    worker_id = turkInfo.workerId;
+  } else {
+    worker_id = String(Date.now());
+  }
+  timestamp = String(Date.now());
+
+  jsPsych.pluginAPI.preloadImages(['img/stop_red.png'], function(){ preloadAudio(); });
+
+  function preloadAudio () {
+      jsPsych.pluginAPI.preloadAudioFiles(['sounds/beep_0ms.mp3', 'sounds/beep_10ms.mp3', 'sounds/beep_20ms.mp3', 'sounds/beep_30ms.mp3', 'sounds/beep_40ms.mp3', 'sounds/beep_50ms.mp3', 'sounds/beep_60ms.mp3', 'sounds/beep_70ms.mp3', 'sounds/beep_80ms.mp3', 'sounds/beep_90ms.mp3', 'sounds/beep_100ms.mp3', 'sounds/beep_200ms.mp3', 'sounds/beep_300ms.mp3', 'sounds/beep_500ms.mp3', 'sounds/beep_1000ms.mp3'], start);
+  }
+
+  /* Start the experiment */
+      function start(){
+        jsPsych.init({
+          display_element: $('#jspsych_target'),
+          timeline: timeline,
+          on_finish: function() {
+            // jsPsych.data.displayData();
+            //instead of displaying data in the on_finish callback, we post it to our server using an AJAX call:
+            $.ajax({
+              type: "POST",
+              url: "/experiment-data",
+              data: JSON.stringify(jsPsych.data.getData()),
+              contentType: "application/json"
+            })
+            .done(function() {
+              window.location.href = "finish";
+            })
+            .fail(function() {
+              alert("A problem occurred while writing to the database. Please contact the researcher for more information.")
+              window.location.href = "/";
+            })
+          }
+        });
+      }
+
+</script>
+</html>
