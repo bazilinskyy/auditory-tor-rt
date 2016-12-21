@@ -38,10 +38,6 @@ app.get('/experiment', function(request, response) {
     response.render('experiment.html');
 });
 
-app.get('/finish', function(request, response) {
-    response.render('finish.html');
-})
-
 app.post('/experiment-data', function(request, response){
     Entry.create({
         "data":request.body
