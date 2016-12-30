@@ -393,7 +393,7 @@
 
   var debrief_block = {
     type: "text",
-    choices: ['Q'],
+    cont_key: ['Q'],
     text: function() {
       return "<p>Thank you! Please note down or copy to your clipboard the following number: <strong>" +
       String(Date.now()) +
@@ -448,7 +448,7 @@
   }
   timestamp = String(Date.now());
 
-  jsPsych.pluginAPI.preloadImages(['img/stop_red.png'], function(){ preloadAudio(); });
+  jsPsych.pluginAPI.preloadImages(['img/stop_red.png', 'circle_low.png', 'circle_middle.png'], function(){ preloadAudio(); });
 
   function preloadAudio () {
       jsPsych.pluginAPI.preloadAudioFiles(['sounds/beep_0ms.mp3', 'sounds/beep_10ms.mp3', 'sounds/beep_20ms.mp3', 'sounds/beep_30ms.mp3', 'sounds/beep_40ms.mp3', 'sounds/beep_50ms.mp3', 'sounds/beep_60ms.mp3', 'sounds/beep_70ms.mp3', 'sounds/beep_80ms.mp3', 'sounds/beep_90ms.mp3', 'sounds/beep_100ms.mp3', 'sounds/beep_200ms.mp3', 'sounds/beep_300ms.mp3', 'sounds/beep_500ms.mp3', 'sounds/beep_1000ms.mp3'], start);
