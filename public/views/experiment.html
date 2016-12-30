@@ -379,7 +379,8 @@
     }
   ];
 
-  var all_trials = jsPsych.randomization.repeat(test_stimuli, 3);
+  var all_trials = jsPsych.randomization.repeat(test_stimuli.slice(0,2), 1);
+  //var all_trials = jsPsych.randomization.repeat(test_stimuli, 3);
 
   var audio_block = {
     type: 'single-audio',
