@@ -45,7 +45,7 @@ app.post('/experiment-data', function(request, response){
     response.end();
 })
 
-app.post('/finish', function(request, response){
+app.get('/finish', function(request, response){
     response.render('finish.html');
 })
 
