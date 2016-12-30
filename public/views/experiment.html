@@ -393,10 +393,11 @@
 
   var debrief_block = {
     type: "text",
+    choices: ['Q'],
     text: function() {
-      return "<p>Thank you! Please remember the following number: " +
+      return "<p>Thank you! Please note down or copy to your clipboard the following number: <strong>" +
       String(Date.now()) +
-      ". Press any key to complete the experiment and proceed to the page to finalise the HIT and receive money.</p>";
+      "</strong>. When you took record of the number press 'Q' to complete the experiment and proceed back to Crowdflower page to finalise the job and receive money.</p>";
     }
   };
 

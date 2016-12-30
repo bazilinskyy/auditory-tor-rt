@@ -45,6 +45,10 @@ app.post('/experiment-data', function(request, response){
     response.end();
 })
 
+app.post('/finish', function(request, response){
+    response.render('finish.html');
+})
+
 // --- START THE SERVER 
 var server = app.listen(process.env.PORT || 3000, function(){
     console.log("Listening on port %d", server.address().port);
