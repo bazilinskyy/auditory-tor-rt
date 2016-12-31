@@ -408,15 +408,15 @@
   timeline.push(audio_block);
   timeline.push(debrief_block);
 
-  /* save data to file */
-  function saveData(filename, filedata){
-   $.ajax({
-      type:'post',
-      cache: false,
-      url: 'save-data.php', // this is the path to the above PHP script
-      data: {filename: filename, filedata: filedata}
-   });
-  }
+  // /* save data to file */
+  // function saveData(filename, filedata){
+  //  $.ajax({
+  //     type:'post',
+  //     cache: false,
+  //     url: 'save-data.php', // this is the path to the above PHP script
+  //     data: {filename: filename, filedata: filedata}
+  //  });
+  // }
 
   // data parameter should be either the value of jsPsych.data()
   // or the parameter that is passed to the on_data_update callback function for the core library
@@ -439,6 +439,21 @@
      });
   }
 
+  var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
   /* MTurk information */
   var turkInfo = jsPsych.turk.turkInfo();
   if(turkInfo.previewMode && !turkInfo.outsideTurk) {
@@ -456,12 +471,11 @@
 
   /* Start the experiment */
       function start(){
+        alert(getUrlParameter('worker_code'););
         jsPsych.init({
           display_element: $('#jspsych_target'),
           timeline: timeline,
           on_finish: function() {
-            // jsPsych.data.displayData();
-            //instead of displaying data in the on_finish callback, we post it to our server using an AJAX call:
             $.ajax({
               type: "POST",
               url: "/experiment-data",
