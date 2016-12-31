@@ -379,8 +379,8 @@
     }
   ];
 
-  var all_trials = jsPsych.randomization.repeat(test_stimuli.slice(0,2), 1);
-  //var all_trials = jsPsych.randomization.repeat(test_stimuli, 3);
+  // var all_trials = jsPsych.randomization.repeat(test_stimuli.slice(0,2), 1);
+  var all_trials = jsPsych.randomization.repeat(test_stimuli, 3);
 
   var audio_block = {
     type: 'single-audio',
@@ -476,7 +476,6 @@
           timeline: timeline,
           on_finish: function() {
             jsPsych.data.addDataToLastTrial({'worker_code': getUrlParameter('worker_code')});
-            alert(JSON.stringify(jsPsych.data.getData()));
             $.ajax({
               type: "POST",
               url: "/experiment-data",
