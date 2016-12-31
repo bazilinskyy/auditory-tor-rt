@@ -396,7 +396,7 @@
     cont_key: ['Q'],
     text: function() {
       return "<p>Thank you! Please note down or copy to your clipboard the following number: <strong>" +
-      String(Date.now()) +
+      getUrlParameter('worker_code') +
       "</strong>. When you took record of the number press 'Q' to complete the experiment and proceed back to Crowdflower page to finalise the job and receive money.</p>";
     }
   };
