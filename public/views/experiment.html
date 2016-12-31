@@ -422,22 +422,22 @@
   // or the parameter that is passed to the on_data_update callback function for the core library
   // jsPsych.data() contains ALL data
   // the callback function will contain only the most recently written data.
-  function saveDataDB(data){
-     var data_table = "auditory_tor_rt_e1"; // change this for different experiments
-     $.ajax({
-        type:'post',
-        cache: false,
-        url: 'save-data-db.php', // change this to point to your php file.
-        // opt_data is to add additional values to every row, like a subject ID
-        // replace 'key' with the column name, and 'value' with the value.
-        data: {
-            table: data_table,
-            json: JSON.stringify(data),
-            // opt_data: {key: value}
-        },
-        success: function(output) { console.log(output); } // write the result to javascript console
-     });
-  }
+  // function saveDataDB(data){
+  //    var data_table = "auditory_tor_rt_e1"; // change this for different experiments
+  //    $.ajax({
+  //       type:'post',
+  //       cache: false,
+  //       url: 'save-data-db.php', // change this to point to your php file.
+  //       // opt_data is to add additional values to every row, like a subject ID
+  //       // replace 'key' with the column name, and 'value' with the value.
+  //       data: {
+  //           table: data_table,
+  //           json: JSON.stringify(data),
+  //           opt_data: {'worker_id': getUrlParameter('worker_code')}
+  //       },
+  //       success: function(output) { console.log(output); } // write the result to javascript console
+  //    });
+  // }
 
   var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -471,11 +471,11 @@
 
   /* Start the experiment */
       function start(){
-        alert(getUrlParameter('worker_code'));
         jsPsych.init({
           display_element: $('#jspsych_target'),
           timeline: timeline,
           on_finish: function() {
+            alert(JSON.stringify(jsPsych.data.getData()));
             $.ajax({
               type: "POST",
               url: "/experiment-data",
