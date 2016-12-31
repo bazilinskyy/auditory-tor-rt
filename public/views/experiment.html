@@ -6,6 +6,7 @@
     <script src="jsPsych/jspsych.js"></script>
     <script src="jsPsych/plugins/jspsych-text.js"></script>
     <script src="jsPsych/plugins/jspsych-single-audio.js"></script>
+    <script src="js/jquery.lazyload.min.js"></script>
     <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
     <link href="css/experiment.css" rel="stylesheet" type="text/css"></link>
 
@@ -492,6 +493,16 @@
           }
         });
       }
+
+$(document).ready(function () {
+  setTimeout(function () {
+    $('.delay').each(function () {
+      var imagex = $(this);
+      var imgOriginal = imagex.data('original');
+      $(imagex).attr('src', imgOriginal);
+    });
+  }, 1000);
+});
 
 </script>
 </html>
