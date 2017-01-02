@@ -8,8 +8,6 @@
     <script src="jsPsych/plugins/jspsych-single-audio.js"></script>
     <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
     <link href="css/experiment.css" rel="stylesheet" type="text/css"></link>
-
-
   </head>
   <body>
     <div class = "parent">
@@ -19,19 +17,6 @@
     </div>
   </body>
   <script>
-
-  // /* define welcome message block */
-  // var welcome_block = {
-  //   type: "text",
-  //   text: "Welcome to the experiment. Press any key to begin."
-  // };
-
-  // /* define instructions block */
-  // var instructions_block = {
-  //   type: "text",
-  //   text: "<p>In this experiment, you will hear sounds. You need to press 'F' after hearing each sound as fast as possible. Your reaction times will be recorded. </p>",
-  //   timing_post_trial: 2000
-  // };
 
   /* define welcome message block */
   var welcome_block = {
@@ -704,37 +689,6 @@
   timeline.push(instructions_block);
   timeline.push(audio_block);
   timeline.push(debrief_block);
-
-  // /* save data to file */
-  // function saveData(filename, filedata){
-  //  $.ajax({
-  //     type:'post',
-  //     cache: false,
-  //     url: 'save-data.php', // this is the path to the above PHP script
-  //     data: {filename: filename, filedata: filedata}
-  //  });
-  // }
-
-  // data parameter should be either the value of jsPsych.data()
-  // or the parameter that is passed to the on_data_update callback function for the core library
-  // jsPsych.data() contains ALL data
-  // the callback function will contain only the most recently written data.
-  // function saveDataDB(data){
-  //    var data_table = "auditory_tor_rt_e1"; // change this for different experiments
-  //    $.ajax({
-  //       type:'post',
-  //       cache: false,
-  //       url: 'save-data-db.php', // change this to point to your php file.
-  //       // opt_data is to add additional values to every row, like a subject ID
-  //       // replace 'key' with the column name, and 'value' with the value.
-  //       data: {
-  //           table: data_table,
-  //           json: JSON.stringify(data),
-  //           opt_data: {'worker_id': getUrlParameter('worker_code')}
-  //       },
-  //       success: function(output) { console.log(output); } // write the result to javascript console
-  //    });
-  // }
 
   var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
