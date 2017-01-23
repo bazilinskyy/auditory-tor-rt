@@ -662,7 +662,7 @@
     type: 'single-audio',
     choices: [],
     timing_post_trial: post_trial_gap,
-    timeline: all_trials.slice(0,25)
+    timeline: all_trials.slice(0,1)
   };
   var audio_block_2 = {
     type: 'single-audio',
@@ -826,6 +826,7 @@ var between_block_4 = {
           })
           .done(function() {
             window.location.href = "finish";
+            window.worker_code = getUrlParameter('worker_code')
           })
           .fail(function() {
             alert("A problem occurred while writing to the database. Please contact the researcher for more information.")
