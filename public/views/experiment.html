@@ -26,7 +26,7 @@
   };
 
   var post_trial_gap = function() {
-    return Math.floor( Math.random() * 1900 ) + 100;
+    return Math.floor( Math.random() * 1000 ) + 1000;
   }
 
   /* define test block */
@@ -661,42 +661,36 @@
   var audio_block_1 = {
     type: 'single-audio',
     choices: [],
-    //timing_response: 5000,
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(0,25)
   };
   var audio_block_2 = {
     type: 'single-audio',
     choices: [],
-    //timing_response: 5000,
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(26,50)
   };
   var audio_block_3 = {
     type: 'single-audio',
     choices: [],
-    //timing_response: 5000,
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(51,75)
   };
   var audio_block_4 = {
     type: 'single-audio',
     choices: [],
-    //timing_response: 5000,
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(76,100)
   };
   var audio_block_5 = {
     type: 'single-audio',
     choices: [],
-    //timing_response: 5000,
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(101,125)
   };
   var audio_block_6 = {
     type: 'single-audio',
     choices: [],
-    //timing_response: 5000,
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(126,150)
   };
@@ -772,19 +766,19 @@ var between_block_4 = {
   var timeline = [];
   timeline.push(instructions_block);
   timeline.push(audio_block_1);
-  timeline.push(between_block_1);
-  timeline.push(audio_block_2);
-  timeline.push(between_block_2);
-  timeline.push(audio_block_3);
-  timeline.push(between_block_3);
-  timeline.push(audio_block_4);
-  timeline.push(between_block_4);
-  timeline.push(audio_block_5);
-  timeline.push(between_block_5);
-  timeline.push(audio_block_6);
-  timeline.push(between_block_6);
-  timeline.push(audio_block_7);
-  timeline.push(debrief_block);
+  // timeline.push(between_block_1);
+  // timeline.push(audio_block_2);
+  // timeline.push(between_block_2);
+  // timeline.push(audio_block_3);
+  // timeline.push(between_block_3);
+  // timeline.push(audio_block_4);
+  // timeline.push(between_block_4);
+  // timeline.push(audio_block_5);
+  // timeline.push(between_block_5);
+  // timeline.push(audio_block_6);
+  // timeline.push(between_block_6);
+  // timeline.push(audio_block_7);
+  // timeline.push(debrief_block);
 
   var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
