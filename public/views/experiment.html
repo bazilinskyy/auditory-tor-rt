@@ -21,7 +21,7 @@
   /* define instructions block */
   var instructions_block = {
     type: "text",
-    text: "<p>In this experiment, you will hear sounds and see red circles. You need to press 'F' after hearing a sound or seeing a red circle as fast as possible. Your reaction times will be recorded. </p>",
+    text: "<p>In this experiment, you will hear sounds and see red circles. You need to press 'F' after hearing a sound or seeing a red circle as fast as possible. Your reaction times will be recorded. You will be asked to respond to stimuli in blocks of 25. </p>",
     timing_post_trial: 2000
   };
 
@@ -658,12 +658,54 @@
   // var all_trials = jsPsych.randomization.repeat(test_stimuli.slice(0,30), 1);
   var all_trials = jsPsych.randomization.repeat(test_stimuli, 2);
 
-  var audio_block = {
+  var audio_block_1 = {
     type: 'single-audio',
     choices: [],
     //timing_response: 5000,
     timing_post_trial: post_trial_gap,
-    timeline: all_trials
+    timeline: all_trials.slice(0,25)
+  };
+  var audio_block_2 = {
+    type: 'single-audio',
+    choices: [],
+    //timing_response: 5000,
+    timing_post_trial: post_trial_gap,
+    timeline: all_trials.slice(26,50)
+  };
+  var audio_block_3 = {
+    type: 'single-audio',
+    choices: [],
+    //timing_response: 5000,
+    timing_post_trial: post_trial_gap,
+    timeline: all_trials.slice(51,75)
+  };
+  var audio_block_4 = {
+    type: 'single-audio',
+    choices: [],
+    //timing_response: 5000,
+    timing_post_trial: post_trial_gap,
+    timeline: all_trials.slice(76,100)
+  };
+  var audio_block_5 = {
+    type: 'single-audio',
+    choices: [],
+    //timing_response: 5000,
+    timing_post_trial: post_trial_gap,
+    timeline: all_trials.slice(101,125)
+  };
+  var audio_block_6 = {
+    type: 'single-audio',
+    choices: [],
+    //timing_response: 5000,
+    timing_post_trial: post_trial_gap,
+    timeline: all_trials.slice(126,150)
+  };
+  var audio_block_7 = {
+    type: 'single-audio',
+    choices: [],
+    //timing_response: 5000,
+    timing_post_trial: post_trial_gap,
+    timeline: all_trials.slice(151,176)
   };
  
 
@@ -671,16 +713,75 @@
     type: "text",
     cont_key: ['Q'],
     text: function() {
-      return "<p>Thank you! Please note down or copy to your clipboard the following code: <strong>" +
+      return "<p>You have now completed all blocks in the experiment. Thank you! Please note down or copy to your clipboard the following code: <strong>" +
       getUrlParameter('worker_code') +
       "</strong>. When you took record of the code press 'Q' to proceed to the final page in this experiment.</p>";
+    }
+  };
+
+  var between_block_1 = {
+    type: "text",
+    cont_key: ['C'],
+    text: function() {
+      return "<p>You have now completed 25 stimuli out of 176. When ready press 'C' to proceed to the next batch.</p>";
+    }
+  };
+
+  var between_block_2 = {
+    type: "text",
+    cont_key: ['C'],
+    text: function() {
+      return "<p>You have now completed 50 stimuli out of 176. When ready press 'C' to proceed to the next batch.</p>";
+    }
+  };
+
+  var between_block_3 = {
+    type: "text",
+    cont_key: ['C'],
+    text: function() {
+      return "<p>You have now completed 75 stimuli out of 176. When ready press 'C' to proceed to the next batch.</p>";
+    }
+  };
+
+
+var between_block_4 = {
+    type: "text",
+    cont_key: ['C'],
+    text: function() {
+      return "<p>You have now completed 100 stimuli out of 176. When ready press 'C' to proceed to the next batch.</p>";
+    }
+  };
+
+  var between_block_5 = {
+    type: "text",
+    cont_key: ['C'],
+    text: function() {
+      return "<p>You have now completed 125 stimuli out of 176. When ready press 'C' to proceed to the next batch.</p>";
+    }
+  };
+
+  var between_block_6 = {
+    type: "text",
+    cont_key: ['C'],
+    text: function() {
+      return "<p>You have now completed 150 stimuli out of 176. When ready press 'C' to proceed to the next batch.</p>";
     }
   };
 
   /* create experiment timeline array */
   var timeline = [];
   timeline.push(instructions_block);
-  timeline.push(audio_block);
+  timeline.push(audio_block_1);
+  timeline.push(between_block);
+  timeline.push(audio_block_2);
+  timeline.push(between_block);
+  timeline.push(audio_block_3);
+  timeline.push(between_block);
+  timeline.push(audio_block_4);
+  timeline.push(between_block);
+  timeline.push(audio_block_5);
+  timeline.push(between_block);
+  timeline.push(audio_block_6);
   timeline.push(debrief_block);
 
   var getUrlParameter = function getUrlParameter(sParam) {
