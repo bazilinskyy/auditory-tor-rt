@@ -37,7 +37,6 @@
       prompt: '<img src="img/circle_red_10ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_10"});
-        jsPsych.incrementProgressBar(1);
       }
     },
     {
@@ -656,8 +655,8 @@
     }
   ];
 
-  var all_trials = jsPsych.randomization.repeat(test_stimuli.slice(0,2), 1);
-  // var all_trials = jsPsych.randomization.repeat(test_stimuli, 2);
+  // var all_trials = jsPsych.randomization.repeat(test_stimuli.slice(0,30), 1);
+  var all_trials = jsPsych.randomization.repeat(test_stimuli, 2);
 
   var audio_block = {
     type: 'single-audio',
@@ -719,7 +718,6 @@
         jsPsych.init({
           display_element: $('#jspsych_target'),
           show_progress_bar: true,
-          progress_bar: 180,
           timeline: timeline,
           on_finish: function() {
             jsPsych.data.addDataToLastTrial({'worker_code': getUrlParameter('worker_code')});
