@@ -21,7 +21,7 @@
   /* define instructions block */
   var instructions_block = {
     type: "text",
-    text: "<p>In this experiment, you will hear sounds and see red circles. You need to press 'F' after hearing a sound or seeing a red circle as fast as possible. Your reaction times will be recorded. You will be asked to respond to stimuli in blocks of 25. </p>",
+    text: "<p>In this experiment, you will hear sounds and see red circles. You need to press 'F' after hearing a sound OR seeing a red circle (whichever comes first) as fast as possible. Your reaction times will be recorded. You will be asked to respond to stimuli in blocks of 25. </p>",
     timing_post_trial: 2000
   };
 
@@ -804,7 +804,7 @@ var between_block_4 = {
         // show_progress_bar: true,
         timeline: timeline,
         on_finish: function() {
-          jsPsych.data.addDataToLastTrial({'worker_code': getUrlParameter('worker_code')});
+          jsPsych.data.addDataToLastTrial({'n': getUrlParameter('n')});
           $.ajax({
             type: "POST",
             url: "/experiment-data",
@@ -812,7 +812,7 @@ var between_block_4 = {
             contentType: "application/json"
           })
           .done(function() {
-            window.location.href = "finish?worker_code=" + getUrlParameter('worker_code');
+            window.location.href = "finish?n=" + getUrlParameter('n');
           })
           .fail(function() {
             alert("A problem occurred while writing to the database. Please contact the researcher for more information.")
