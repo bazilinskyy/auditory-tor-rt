@@ -41,7 +41,9 @@
       prompt: '<img src="img/circle_red_10ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_10"});
-    
+    	jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
+      }
+    },
     {
       stimulus: 'sounds/beep_0ms.mp3',
       prompt: '<img src="img/circle_red_60ms.gif" />',
