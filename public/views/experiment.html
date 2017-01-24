@@ -37,6 +37,7 @@
       prompt: '<img src="img/circle_red_10ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_10"});
+        jsPsych.data.addDataToLastTrial({delay_after: "beep_0_red_10"});
       }
     },
     {
@@ -662,43 +663,64 @@
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
-    timeline: all_trials.slice(0,25)
+    timeline: all_trials.slice(0,25),
+    on_finish: function(data){
+		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
+	}
   };
   var audio_block_2 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
-    timeline: all_trials.slice(26,50)
+    timeline: all_trials.slice(26,50),
+    on_finish: function(data){
+		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
+	}
   };
   var audio_block_3 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
-    timeline: all_trials.slice(51,75)
+    timeline: all_trials.slice(51,75),
+    on_finish: function(data){
+		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
+	}
   };
   var audio_block_4 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
-    timeline: all_trials.slice(76,100)
+    timeline: all_trials.slice(76,100),
+    on_finish: function(data){
+		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
+	}
   };
   var audio_block_5 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
-    timeline: all_trials.slice(101,125)
+    timeline: all_trials.slice(101,125),
+    on_finish: function(data){
+		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
+	}
   };
   var audio_block_6 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
-    timeline: all_trials.slice(126,150)
+    timeline: all_trials.slice(126,150),
+    on_finish: function(data){
+		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
+	}
   };
   var audio_block_7 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
-    timeline: all_trials.slice(151)
+    timeline: all_trials.slice(151),
+    on_finish: function(data){
+		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
+	}
   };
 
   var between_block_1 = {
