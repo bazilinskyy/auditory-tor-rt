@@ -21,14 +21,14 @@
   /* define instructions block */
   var instructions_block = {
     type: "text",
-    text: "<p>In this experiment, you will hear sounds and see red circles. Please make sure that your audio is on. You need to press 'F' after hearing a sound OR seeing a red circle (whichever comes first) as fast as possible. Your reaction times will be recorded. After each group of 25 stimuli you will be able to take a small break. Please press any key to start with the first stimulus.</p>",
+    text: "<p>In this experiment, you will hear sounds and see red circles. Please make sure that your audio is on and set your screen to bright. You need to press 'F' after hearing a sound OR seeing a red circle (whichever comes first) as fast as possible. Your reaction times will be recorded. After each group of 25 stimuli you will be able to take a small break. Please press any key to start with the first stimulus.</p>",
     timing_post_trial: 2000
   };
 
   var post_trial_gap_last = -1;
 
   var post_trial_gap = function() {
-    post_trial = Math.floor( Math.random() * 3000 ) + 1000;
+    post_trial = Math.floor( Math.random() * 2300 ) + 1000;
     post_trial_gap_last = post_trial;
     return post_trial;
   }
