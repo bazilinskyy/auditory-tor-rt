@@ -25,8 +25,12 @@
     timing_post_trial: 2000
   };
 
+  var post_trial_gap_last = -1;
+
   var post_trial_gap = function() {
-    return Math.floor( Math.random() * 1000 ) + 1000;
+    post_trial = Math.floor( Math.random() * 1000 ) + 1000;
+    post_trial_gap_last = post_trial;
+    return post_trial;
   }
 
   /* define test block */
@@ -37,42 +41,13 @@
       prompt: '<img src="img/circle_red_10ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_10"});
-        jsPsych.data.addDataToLastTrial({delay_after: "beep_0_red_10"});
-      }
-    },
-    {
-      stimulus: 'sounds/beep_0ms.mp3',
-      prompt: '<img src="img/circle_red_20ms.gif" />',
-      on_finish: function(data){
-        jsPsych.data.addDataToLastTrial({type: "beep_0_red_20"});
-      }
-    },
-    {
-      stimulus: 'sounds/beep_0ms.mp3',
-      prompt: '<img src="img/circle_red_30ms.gif" />',
-      on_finish: function(data){
-        jsPsych.data.addDataToLastTrial({type: "beep_0_red_30"});
-      }
-    },
-    {
-      stimulus: 'sounds/beep_0ms.mp3',
-      prompt: '<img src="img/circle_red_40ms.gif" />',
-      on_finish: function(data){
-        jsPsych.data.addDataToLastTrial({type: "beep_0_red_40"});
-      }
-    },
-    {
-      stimulus: 'sounds/beep_0ms.mp3',
-      prompt: '<img src="img/circle_red_50ms.gif" />',
-      on_finish: function(data){
-        jsPsych.data.addDataToLastTrial({type: "beep_0_red_50"});
-      }
-    },
+    
     {
       stimulus: 'sounds/beep_0ms.mp3',
       prompt: '<img src="img/circle_red_60ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_60"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -80,6 +55,7 @@
       prompt: '<img src="img/circle_red_70ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_70"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -87,6 +63,7 @@
       prompt: '<img src="img/circle_red_80ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_80"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -94,6 +71,7 @@
       prompt: '<img src="img/circle_red_90ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_90"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -101,6 +79,7 @@
       prompt: '<img src="img/circle_red_100ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_100"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -108,6 +87,7 @@
       prompt: '<img src="img/circle_red_200ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_200"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -115,6 +95,7 @@
       prompt: '<img src="img/circle_red_300ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_300"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -122,6 +103,7 @@
       prompt: '<img src="img/circle_red_500ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_500"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -129,6 +111,7 @@
       prompt: '<img src="img/circle_red_1000ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red_1000"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     /* middle red delayed */
@@ -137,6 +120,7 @@
       prompt: '<img src="img/circle_middle_10ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_10"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -144,6 +128,7 @@
       prompt: '<img src="img/circle_middle_20ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_20"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -151,6 +136,7 @@
       prompt: '<img src="img/circle_middle_30ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_30"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -158,6 +144,7 @@
       prompt: '<img src="img/circle_middle_40ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_40"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -165,6 +152,7 @@
       prompt: '<img src="img/circle_middle_50ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_50"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -172,6 +160,7 @@
       prompt: '<img src="img/circle_middle_60ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_60"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -179,6 +168,7 @@
       prompt: '<img src="img/circle_middle_70ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_70"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -186,6 +176,7 @@
       prompt: '<img src="img/circle_middle_80ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_80"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -193,6 +184,7 @@
       prompt: '<img src="img/circle_middle_90ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_90"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -200,6 +192,7 @@
       prompt: '<img src="img/circle_middle_100ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_100"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -207,6 +200,7 @@
       prompt: '<img src="img/circle_middle_200ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_200"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -214,6 +208,7 @@
       prompt: '<img src="img/circle_middle_300ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_300"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -221,6 +216,7 @@
       prompt: '<img src="img/circle_middle_500ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_500"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -228,6 +224,7 @@
       prompt: '<img src="img/circle_middle_1000ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle_1000"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     /* low red delayed */
@@ -236,6 +233,7 @@
       prompt: '<img src="img/circle_low_10ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_10"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -243,6 +241,7 @@
       prompt: '<img src="img/circle_low_20ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_20"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -250,6 +249,7 @@
       prompt: '<img src="img/circle_low_30ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_30"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -257,6 +257,7 @@
       prompt: '<img src="img/circle_low_40ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_40"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -264,6 +265,7 @@
       prompt: '<img src="img/circle_low_50ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_50"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -271,6 +273,7 @@
       prompt: '<img src="img/circle_low_60ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_60"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -278,6 +281,7 @@
       prompt: '<img src="img/circle_low_70ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_70"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -285,6 +289,7 @@
       prompt: '<img src="img/circle_low_80ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_80"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -292,6 +297,7 @@
       prompt: '<img src="img/circle_low_90ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_90"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -299,6 +305,7 @@
       prompt: '<img src="img/circle_low_100ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_100"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -306,6 +313,7 @@
       prompt: '<img src="img/circle_low_200ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_200"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -313,6 +321,7 @@
       prompt: '<img src="img/circle_low_300ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_300"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -320,6 +329,7 @@
       prompt: '<img src="img/circle_low_500ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_500"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -327,6 +337,7 @@
       prompt: '<img src="img/circle_low_1000ms.gif" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low_1000"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     /* red */
@@ -335,6 +346,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -342,6 +354,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_10_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -349,6 +362,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_20_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -356,6 +370,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_30_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -363,6 +378,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_40_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -370,6 +386,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_50_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -377,6 +394,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_60_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -384,6 +402,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_70_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -391,6 +410,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_80_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -398,6 +418,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_90_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -405,6 +426,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_100_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -412,6 +434,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_200_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -419,6 +442,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_300_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -426,6 +450,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_500_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -433,6 +458,7 @@
       prompt: '<img src="img/circle_red.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_1000_red"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     /* middle red */
@@ -441,6 +467,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -448,6 +475,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_10_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -455,6 +483,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_20_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -462,6 +491,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_30_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -469,6 +499,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_40_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -476,6 +507,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_50_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -483,6 +515,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_60_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -490,6 +523,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_70_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -497,6 +531,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_80_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -504,6 +539,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_90_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -511,6 +547,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_100_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -518,6 +555,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_200_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -525,6 +563,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_300_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -532,6 +571,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_500_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -539,6 +579,7 @@
       prompt: '<img src="img/circle_middle.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_1000_middle"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     /* low red */
@@ -547,6 +588,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -554,6 +596,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_10_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -561,6 +604,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_20_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -568,6 +612,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_30_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -575,6 +620,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_40_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -582,6 +628,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_50_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -589,6 +636,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_60_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -596,6 +644,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_70_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -603,6 +652,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_80_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -610,6 +660,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_90_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -617,6 +668,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_100_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -624,6 +676,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_200_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -631,6 +684,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_300_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -638,6 +692,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_500_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     {
@@ -645,6 +700,7 @@
       prompt: '<img src="img/circle_low.png" />',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_1000_low"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     },
     /* no visual */
@@ -652,6 +708,7 @@
       stimulus: 'sounds/beep_0ms.mp3',
       on_finish: function(data){
         jsPsych.data.addDataToLastTrial({type: "beep_0_no"});
+        jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
       }
     }
   ];
@@ -664,63 +721,42 @@
     choices: ['F'],
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(0,25),
-    on_finish: function(data){
-		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
-	}
   };
   var audio_block_2 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(26,50),
-    on_finish: function(data){
-		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
-	}
   };
   var audio_block_3 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(51,75),
-    on_finish: function(data){
-		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
-	}
   };
   var audio_block_4 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(76,100),
-    on_finish: function(data){
-		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
-	}
   };
   var audio_block_5 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(101,125),
-    on_finish: function(data){
-		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
-	}
   };
   var audio_block_6 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(126,150),
-    on_finish: function(data){
-		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
-	}
   };
   var audio_block_7 = {
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
     timeline: all_trials.slice(151),
-    on_finish: function(data){
-		jsPsych.data.addDataToLastTrial({post_trial_gap: post_trial_gap});
-	}
   };
 
   var between_block_1 = {
