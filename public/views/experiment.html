@@ -722,7 +722,7 @@
     type: 'single-audio',
     choices: ['F'],
     timing_post_trial: post_trial_gap,
-    timeline: all_trials.slice(0,2),
+    timeline: all_trials.slice(0,25),
   };
   var audio_block_2 = {
     type: 'single-audio',
@@ -814,18 +814,18 @@ var between_block_4 = {
   var timeline = [];
   timeline.push(instructions_block);
   timeline.push(audio_block_1);
-  // timeline.push(between_block_1);
-  // timeline.push(audio_block_2);
-  // timeline.push(between_block_2);
-  // timeline.push(audio_block_3);
-  // timeline.push(between_block_3);
-  // timeline.push(audio_block_4);
-  // timeline.push(between_block_4);
-  // timeline.push(audio_block_5);
-  // timeline.push(between_block_5);
-  // timeline.push(audio_block_6);
-  // timeline.push(between_block_6);
-  // timeline.push(audio_block_7);
+  timeline.push(between_block_1);
+  timeline.push(audio_block_2);
+  timeline.push(between_block_2);
+  timeline.push(audio_block_3);
+  timeline.push(between_block_3);
+  timeline.push(audio_block_4);
+  timeline.push(between_block_4);
+  timeline.push(audio_block_5);
+  timeline.push(between_block_5);
+  timeline.push(audio_block_6);
+  timeline.push(between_block_6);
+  timeline.push(audio_block_7);
 
   var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
