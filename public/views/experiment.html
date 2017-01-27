@@ -911,19 +911,13 @@ var between_block_4 = {
   timeline.push(between_block_6);
   timeline.push(audio_block_7);
 
-  var jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
-        jsPsych.data.addDataToLastTrial({worker_code: getUrlParameter('work')});
-        jsPsych.data.addDataToLastTrial({worker_code: getUrlParameter('work')}); = function jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
-        jsPsych.data.addDataToLastTrial({worker_code: getUrlParameter('work')});
-        jsPsych.data.addDataToLastTrial({worker_code: getUrlParameter('work')});(sParam) {
+  var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
         sParameterName,
         i;
-
     for (i = 0; i < sURLVariables.length; i++) {
         sParameterName = sURLVariables[i].split('=');
-
         if (sParameterName[0] === sParam) {
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
