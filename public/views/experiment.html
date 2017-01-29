@@ -953,9 +953,7 @@ var between_block_4 = {
             contentType: "application/json"
           })
           .done(function() {
-            window.location.href = "finish?work=" + jsPsych.data.addDataToLastTrial({delay_after: post_trial_gap_last});
-        jsPsych.data.addDataToLastTrial({worker_code: getUrlParameter('work')});
-        jsPsych.data.addDataToLastTrial({worker_code: getUrlParameter('work')});('work');
+            wiindow.location.href = "finish?work=" + getUrlParameter('work');
           })
           .fail(function() {
             alert("A problem occurred while writing to the database. Please contact the researcher for more information.")
